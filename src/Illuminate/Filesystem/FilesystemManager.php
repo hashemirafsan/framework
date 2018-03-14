@@ -17,11 +17,12 @@ use League\Flysystem\Adapter\Local as LocalAdapter;
 use League\Flysystem\AwsS3v3\AwsS3Adapter as S3Adapter;
 use League\Flysystem\Cached\Storage\Memory as MemoryStore;
 use Illuminate\Contracts\Filesystem\Factory as FactoryContract;
+use Illuminate\Support\Manager;
 
 /**
  * @mixin \Illuminate\Contracts\Filesystem\Filesystem
  */
-class FilesystemManager implements FactoryContract
+class FilesystemManager extends Manager implements FactoryContract
 {
     /**
      * The application instance.
